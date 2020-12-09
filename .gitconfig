@@ -1,2 +1,7 @@
 [init]
 	defaultBranch = main
+[user]
+	name = Binyamin Aron Green
+	email = binyamingreen@protonmail.com
+[pull]
+	ff = only
