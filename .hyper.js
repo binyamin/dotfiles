@@ -12,7 +12,7 @@ module.exports = {
     fontSize: 12,
 
     // font family with optional fallbacks
-    fontFamily: '"Cascadia Code PL", "Cascadia Code", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: '"Cascadia Code PL", "Cascadia Code", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace, "Noto Color Emoji"',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -151,7 +151,7 @@ module.exports = {
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed
-  localPlugins: ["hyper-window-title", "hyper-select", "hyper-spotify"],
+  localPlugins: ["hyper-window-title", "hyper-spotify"],
 
   keymaps: {
     // Example
