@@ -1,5 +1,5 @@
 # Setup script for GitHub Codespaces
-export INSTALL_ZSH=true
+export INSTALL_ZSH=false
 export USERNAME=`whoami`
 
 sudo apt-get update
