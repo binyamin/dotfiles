@@ -8,5 +8,6 @@ cat << EOF > "$HOME/.config/yadm/repo.git/info/sparse-checkout"
 !README.md
 !LICENSE
 !install.sh
+!.envrc.sample
 EOF
 yadm checkout --quiet
