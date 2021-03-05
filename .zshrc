@@ -94,9 +94,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-if [ -f ~/.aliases ]; then
-	.	~/.aliases
-fi
+[ -f ~/.aliases ] && . ~/.aliases
 
 eval "$(gh completion -s zsh)"
 
@@ -106,3 +104,6 @@ _get_comp_words_by_ref() { :; }
 compopt() { :; }
 _filedir() { :; }
 eval "$(beet completion)"
+
+[ -f ~/.config/shell_common/common ] && . ~/.config/shell_common/common
+

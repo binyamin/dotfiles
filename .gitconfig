@@ -1,4 +1,5 @@
 [init]
+	; git<=2.25 doesn't support this option
 	defaultBranch = main
 [user]
 	name = Binyamin Aron Green
