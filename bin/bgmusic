@@ -1,0 +1,64 @@
+#!/bin/bash
+
+declare -A meta
+
+meta[name]=`basename $0`
+meta[version]="0.1.0"
+meta[desc]="Utility script for playing music via beets and mpv"
+
+header="${meta[name]}@${meta[version]}"
+
+show_usage() {
+  echo "Usage:
+  ${meta[name]} COMMAND [args...]
+
+  Flags:
+    -h, --help             Print this message
+    -v, --version          Get program version
+
+  Commands:
+    play [beets query string]
+        Query beets, and play the results with mpv"
+}
+
+while :
+do
+  case "$1" in
+    play)
+      # Play all files from beets path query
+      if [[ $2 ]]; then
+        filepaths=`beet list -p $2`
+
+        if [[ -n $filepaths ]]; then
+          mpv_arg=`echo "$filepaths" | sed -rz 's/\n/\" \"/g'`
+          echo "\"$mpv_arg\"" | xargs mpv
+        else
+          echo "No results"
+        fi
+        exit 0
+      else
+        echo "You must supply a query string!"
+        exit 1
+      fi
+      ;;
+    -h | --help)
+      # Help command
+      show_usage
+      exit 0
+      ;;
+    -v | --version)
+      # Program information
+      echo "${meta[version]}"
+      exit 0
+      ;;
+    "")
+      # No arguments found
+      show_usage
+      exit 0
+      ;;
+    *)
+      # No more valid args
+      break
+      ;;
+  esac
+done
