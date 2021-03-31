@@ -98,8 +98,6 @@ eval "$(gh completion -s bash)"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
-eval "$(beet completion)"
-
 # Cross-shell config
 [ -f ~/.config/shell_common/common ] && . ~/.config/shell_common/common
   

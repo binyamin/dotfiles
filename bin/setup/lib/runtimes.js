@@ -14,7 +14,7 @@ export function nodejs() {
         shx.exec(`git clone https://github.com/nvm-sh/nvm.git "${nvm_dir}"`);
         shx.cd(nvm_dir);
         shx.exec("git checkout \`git describe --abbrev=0 --tags --match \"v[0-9]*\" $(git rev-list --tags --max-count=1)\`");
-        shx.exec(`${nvm_dir}/nvm.sh`);
+        shx.exec(`. ${nvm_dir}/nvm.sh`);
     }
 
     // Install node

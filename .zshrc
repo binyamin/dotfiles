@@ -103,7 +103,6 @@ bashcompinit
 _get_comp_words_by_ref() { :; }
 compopt() { :; }
 _filedir() { :; }
-eval "$(beet completion)"
 
 [ -f ~/.config/shell_common/common ] && . ~/.config/shell_common/common
 
