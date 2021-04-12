@@ -89,6 +89,6 @@ function f_git {
             git_status=" [$git_status]"
         fi
 
-        printf " \[\033[1m\]on \[\033[38;5;5m\] $branch$git_status\[\033[0m\]"
+        printf " \[\033[1m\]on \[\033[38;5;5m\]$branch$git_status\[\033[0m\]"
     fi
 }
