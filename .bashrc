@@ -101,3 +101,4 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # Cross-shell config
 [ -f ~/.config/shell_common/common ] && . ~/.config/shell_common/common
   
+[ -f ~/.config/shell_common/bash_prompt/prompt.sh ] && source ~/.config/shell_common/bash_prompt/prompt.sh
