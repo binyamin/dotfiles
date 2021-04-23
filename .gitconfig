@@ -6,3 +6,11 @@
 	email = binyamingreen@protonmail.com
 [pull]
 	ff = only
+[merge]
+	tool = "vsc"
+[mergetool "vsc"]
+	cmd = code-insiders --wait --new-window $MERGED
+[diff]
+	tool = "vsc"
+[difftool "vsc"]
+	cmd = code-insiders --wait --diff --new-window $LOCAL $REMOTE
