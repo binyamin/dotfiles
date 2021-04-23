@@ -8,6 +8,9 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+
+## Default Setup ##
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -31,7 +34,7 @@ if [ -f "$HOME/.envrc" ]; then
     . "$HOME/.envrc"
 fi
 
+## Environment variables ##
 
-# Environment variables
 export EDITOR='vim'
-
+export XDG_CONFIG_HOME="$HOME/.config"

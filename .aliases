@@ -24,5 +24,4 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 ## General ##
-alias mit="curl -s https://api.github.com/licenses/mit | jq -r '.body'"
 alias vsc="code-insiders"

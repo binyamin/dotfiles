@@ -1,10 +1,5 @@
 #!/bin/sh
 
-### This file is for cross-shell setup ###
-
-# Load various functions
-[ -f "$XDG_CONFIG_HOME/shell_common/functions.sh" ] && . "$XDG_CONFIG_HOME/shell_common/functions.sh"
-
 ## Init runtimes/languages ##
 
 # Pyenv (python) setup
@@ -21,12 +16,11 @@ if [ -d "$HOME/.rbenv/bin" ]; then
 fi
 
 # NVM (node) setup
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Go setup
 if [ -d /usr/local/go ]; then
-  export PATH=$PATH:/usr/local/go/bin
+  export PATH="$PATH:/usr/local/go/bin"
 fi
-

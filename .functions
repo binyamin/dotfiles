@@ -11,3 +11,12 @@ timer() {
   
   sleep $1 && mksound & zenity --info --icon-name="time" --text="${2:-"Time's up!"}";
 }
+
+mit() {
+  if [ -f ~/.local/bin/license ]; then
+    cat ~/.local/bin/license
+  else
+    lic=$(curl -s https://api.github.com/licenses/mit | jq -r '.body')
+    echo $lic | sed -e "s/\[year\]/`date +%Y`/" -e "s/\[fullname\]/Binyamin Aron Green/"
+  fi
+}
