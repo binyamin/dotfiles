@@ -29,12 +29,14 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# load global env file
-if [ -f "$HOME/.envrc" ]; then
-    . "$HOME/.envrc"
-fi
 
 ## Environment variables ##
 
 export EDITOR='vim'
 export XDG_CONFIG_HOME="$HOME/.config"
+
+# Load global env secrets
+# See https://stackoverflow.com/a/20909045
+if [ -f "$HOME/.env" ]; then
+    export $(grep -v '^#' .env | xargs -d '\n')
+fi

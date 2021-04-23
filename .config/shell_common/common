@@ -24,3 +24,15 @@ export NVM_DIR="$HOME/.config/nvm"
 if [ -d /usr/local/go ]; then
   export PATH="$PATH:/usr/local/go/bin"
 fi
+
+# Deno Setup
+export DENO_INSTALL="$HOME/.deno"
+if [ -d $DENO_INSTALL ]; then
+  export PATH="$DENO_INSTALL/bin:$PATH"
+fi
+
+# Rust (cargo) setup
+export CARGO_DIR="$HOME/.cargo"
+if [ -d $CARGO_DIR ]; then
+  export PATH="$CARGO_DIR/bin:$PATH";
+fi
