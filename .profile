@@ -34,6 +34,7 @@ fi
 
 export EDITOR='vim'
 export XDG_CONFIG_HOME="$HOME/.config"
+export MICRO_TRUECOLOR=1
 
 # Load global env secrets
 # See https://stackoverflow.com/a/20909045
