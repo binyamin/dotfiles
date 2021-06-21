@@ -32,7 +32,7 @@ fi
 
 ## Environment variables ##
 
-export EDITOR='vim'
+export EDITOR='micro'
 export XDG_CONFIG_HOME="$HOME/.config"
 export MICRO_TRUECOLOR=1
 

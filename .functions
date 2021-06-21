@@ -9,7 +9,7 @@ mksound() {
 timer() {
   # $ timer <seconds> <title>
   
-  sleep $1 && mksound & zenity --info --icon-name="time" --text="${2:-"Time's up!"}";
+  sleep $1 && mksound & zenity --info --icon-name="time" --text="${2:-'Time's up!'}";
 }
 
 mit() {
@@ -19,4 +19,11 @@ mit() {
     lic=$(curl -s https://api.github.com/licenses/mit | jq -r '.body')
     echo $lic | sed -e "s/\[year\]/`date +%Y`/" -e "s/\[fullname\]/Binyamin Aron Green/"
   fi
+}
+
+reload_gtk_theme() {
+  theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
+  gsettings set org.gnome.desktop.interface gtk-theme ''
+  sleep 1
+  gsettings set org.gnome.desktop.interface gtk-theme $theme
 }
