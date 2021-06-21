@@ -23,3 +23,7 @@ docker run -d --restart unless-stopped --log-opt max-size=10m \
 	-p 8001:80 \
 	-e TZ=America/New_York \
   --name freshrss freshrss/freshrss
+
+# refresh screen (ubuntu budgie)
+nohup budgie-panel --replace&
+nohup budgie-wm -r&

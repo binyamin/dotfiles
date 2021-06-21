@@ -6,10 +6,14 @@ mksound() {
   paplay "/usr/share/sounds/freedesktop/stereo/${1:-"message"}.oga"
 }
 
+# Show a notification after a set duration
 timer() {
-  # $ timer <seconds> <title>
-  
-  sleep $1 && mksound & zenity --info --icon-name="time" --text="${2:-'Time's up!'}";
+  if [ -z $1 ]; then
+    # no params, show help
+    printf "Usage: timer <seconds> [title]\n"
+  else
+    sleep $1 && mksound & zenity --info --icon-name="time" --text="${2:-Time\'s up!}";
+  fi
 }
 
 mit() {
