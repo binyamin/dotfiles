@@ -3,17 +3,14 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="spaceship"
 SPACESHIP_DIR_TRUNC_REPO=false
 
-plugins=(git)
+plugins=(git zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
 
-## User configuration ##
+fpath+=~/.zfunc
+compinit
 
-autoload bashcompinit
-bashcompinit
-_get_comp_words_by_ref() { :; }
-compopt() { :; }
-_filedir() { :; }
+## User configuration ##
 
 [ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
 [ -f "$HOME/.functions" ] && source "$HOME/.functions"

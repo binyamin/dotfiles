@@ -92,12 +92,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# GitHub Cli Completion
-eval "$(gh completion -s bash)"
 
 # Cross-shell config
 [ -f ~/.functions ] && source ~/.functions
 [ -f "$HOME/.config/shell_common/common" ] && source "$HOME/.config/shell_common/common"
+
+# Bash Completion
+eval "$(gh completion -s bash)"
+eval "$(fnm completions --shell bash)"
 
 # Custom prompt
 [ -f ~/.config/shell_common/bash_prompt/prompt.sh ] && source ~/.config/shell_common/bash_prompt/prompt.sh
