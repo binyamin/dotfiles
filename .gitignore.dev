@@ -1,11 +1,16 @@
 /*
 
+**/*/.git
+
 !.config/shell_common/
 !.config/yadm/bootstrap
 
 !bin/setup/
 !bin/bgmusic
 !bin/commands.sh
+!bin/music-cli
+!bin/@musix
+!bin/@mkarchive
 
 !/.local/bin/
 
@@ -14,6 +19,7 @@
 !.functions
 !.gitconfig
 !.gitignore
+!.gitignore.dev
 !.npmrc
 !.profile
 !.vimrc
