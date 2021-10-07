@@ -1,0 +1,45 @@
+{
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Reload nginx",
+				"type": "shell",
+				"command": "sudo nginx -s reload",
+				"problemMatcher": [],
+				"presentation": {
+					"echo": false,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": false,
+					"clear": false
+				}
+			}
+		]
+	},
+	"folders": [
+		{
+			"path": "/etc/nginx",
+			"name": "global config"
+		},
+		{
+			"path": "/home/binyamin/.local/share/nginx",
+			"name": "local config"
+		},
+		{
+			"path": "/usr/share/nginx",
+			"name": "global root dir"
+		},
+		{
+			"path": "/home/binyamin/www",
+			"name": "local root dir (custom)",
+		},
+		{
+			"path": "/var/www/html"
+		}
+	],
+	"settings": {
+		"terminal.integrated.cwd": "/home/binyamin/www"
+	},
+}
