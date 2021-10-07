@@ -1,0 +1,70 @@
+#!/bin/bash
+
+###
+# Create a .tar.7z backup
+# $ tar cf - ~/Pictures | 7z a -si pictures.tar.7z
+###
+
+_name=`basename $0`
+_version=0.1.0
+_desc="Create a .tar.7z backup for a directory"
+
+_header="$_name $_version\n$_desc"
+
+_help() {
+	local _indent='    '
+	echo -e "$_header\n"
+	echo -e "Usage:"
+	echo -e "$_indent$_name [flags] <directory-to-backup>"
+	echo -e "\nFlags:"
+  	echo -e "${_indent}-e, --edit\tOpen the script in the shell's default text-editor"
+  	echo -e "${_indent}-v, --version\tPrint the program's version"
+  	echo -e "${_indent}-h, --help\tPrint usage information"
+}
+
+die() {
+	local _ret="${2:-1}"
+	echo "$1" >&2
+	exit "${_ret}"
+}
+
+# Get Flags (positional arguments)
+while [[ "$1" =~ ^- && ! "$1" == "--" ]]; do case $1 in
+	-v | --version )
+		echo $_version
+		exit
+		;;
+	-e | --edit )
+		$EDITOR $0
+		exit
+		;;
+	-h | --help )
+		_help
+		exit
+		;;
+	-o | --output )
+		echo "todo - set the destination filename"
+		exit
+		;;
+	# -f | --flag )
+		# flag=1
+		# ;;
+esac; shift; done
+if [[ "$1" == '--' ]]; then shift; fi
+
+
+[ -z "$1" ] && die "You must provide a directory path" 127
+[ -e "$1" ] || die "Could not access the given directory"
+[ -d "$1" ] || die "Expected directory; received file" 127
+
+dest_root=`pwd`
+dest_folder=`basename $1`
+source_root=`dirname $1`
+source_folder=`basename $1`
+
+printf "Creating archive %s.tar.7z from %s\n" ./${dest_folder,,} $source_root/$source_folder
+
+(
+	cd $source_root
+	tar cf - $source_folder | 7z a -si ${dest_root%*/}/${dest_folder,,}.tar.7z
+)
