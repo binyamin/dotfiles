@@ -4,6 +4,7 @@ import shx from "shelljs";
  * Installs Node.js LTS via NVM
  */
 export function nodejs() {
+    console.log(this);
     if(!shx.which("git")) {
         shx.exec("apt install -y git");
     }

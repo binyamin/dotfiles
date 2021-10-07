@@ -9,6 +9,10 @@
 #umask 022
 
 
+## Pyenv root (must be before the line `. "$HOME/.bashrc"` )
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
 ## Default Setup ##
 
 # if running bash
@@ -40,5 +44,5 @@ export MICRO_TRUECOLOR=1
 # Load global env secrets
 # See https://stackoverflow.com/a/20909045
 if [ -f "$HOME/.env" ]; then
-    export $(grep -v '^#' .env | xargs -d '\n')
+    export $(grep -v '^#' "$HOME/.env" | xargs -d '\n')
 fi

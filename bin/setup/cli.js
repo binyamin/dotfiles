@@ -38,6 +38,7 @@ async function section(title="", list=[]) {
         spinner.color = ora_colors[idx];
         spinner.text = `[${Number(idx) + 1}/${list.length}] Installing ${fname}`;
         fn();
+        fn.call();
     }
     spinner.text = "";
     spinner.succeed();

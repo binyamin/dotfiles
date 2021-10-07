@@ -24,40 +24,37 @@ async function section(title="", list=[]) {
     spinner.succeed();
 }
 await section("Runtimes", [
-    // "Node.js (nvm)",
-    // "Python3 (pyenv)",
-    // "Java"
+    "Node.js (nvm)",
+    "Python3 (pyenv)",
+    "Java"
 ]);
 await section("Developer Tools", [
-    // "Git",
-    // "Tilix (apt)",
-    // "ZSH & OMZ",
-    // "vim & vim-plug",
-    // "yadm",
-    // "docker",
-    // "bat (apt)",
-    // "gh cli",
-    // "jq (apt)",
-    // "printer-driver-gutenprint (apt)",
-    // "protonvpn-cli",
-    // "playerctl (apt)",
-    // "imagemagick"
+    "Git",
+    "ZSH & OMZ",
+    "vim & vim-plug",
+    "yadm",
+    "docker",
+    "bat (apt)",
+    "gh cli",
+    "jq (apt)",
+    "printer-driver-gutenprint (apt)",
+    "protonvpn-cli",
+    "playerctl (apt)",
+    "imagemagick"
 ]);
 await section("Apps", [
-    // "Code-insiders (snap)",
+    "Code-insiders (snap)",
     "Microsoft Edge Dev (browser)",
-    // "Spotify (snap)",
-    // "VLC (snap)",
+    "Spotify (snap)",
+    "VLC (snap)",
     "Element",
     "Dropbox",
     "Keybase",
-    "Obsidian (snap)",
-    // "emote (snap)",
+    // "Obsidian (flatpak)",
+    "emote (snap)",
     // "flameshot (snap)",
-    // "freac (snap)",
-    "mpv",
-    "beets",
-    "zoom"
+    "freac (snap)",
+    "mpv"
 ]);
 
 await section("UI", [
