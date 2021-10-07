@@ -1,9 +1,15 @@
 /*
-
 **/*/.git
+
+
+## ~/.config
 
 !.config/shell_common/
 !.config/yadm/bootstrap
+!.config/polybar
+
+
+## ~/bin
 
 !bin/setup/
 !bin/bgmusic
@@ -12,7 +18,15 @@
 !bin/@musix
 !bin/@mkarchive
 
-!/.local/bin/
+## ~/.local
+
+!.local/bin/
+
+!.local/share/nginx/
+.local/share/nginx/logs/
+
+
+## ~/*
 
 !.aliases
 !.bashrc
