@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+task_info() {
+    echo $@
+    node $HOME/bin/music-cli/info.js $@
+}
+
+
+[ -f "$HOME/bin/runner" ] && eval "$(cat $HOME/bin/runner)"
