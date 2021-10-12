@@ -25,7 +25,6 @@ fi
 
 ## General ##
 alias vsc="code-insiders"
-alias bat="batcat"
 
 # Prefer pre-installed executable `time` over built-in shell keyword (h/t
 # https://askubuntu.com/a/86196)
