@@ -9,6 +9,7 @@ setopt no_case_glob
 
 # completion
 fpath+=~/.zfunc
+autoload -Uz bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' rehash true
