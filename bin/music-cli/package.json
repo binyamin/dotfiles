@@ -8,6 +8,6 @@
   "type": "module",
   "dependencies": {
     "minimist": "^1.2.5",
-    "music-metadata": "^7.11.3"
+    "music-metadata": "^11.12.3"
   }
 }
