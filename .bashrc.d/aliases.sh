@@ -1,5 +1,9 @@
 #!/bin/bash
 
+###
+# Alias definitions
+###
+
 ## Copied from .bashrc ##
 
 # some more ls aliases

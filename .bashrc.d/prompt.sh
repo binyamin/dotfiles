@@ -7,9 +7,9 @@
 # License: MIT
 # https://github.com/binyamin/dotfiles
 
-source ${BASH_SOURCE%/prompt.sh}/lib/git.sh
-source ${BASH_SOURCE%/prompt.sh}/lib/node.sh
-source ${BASH_SOURCE%/prompt.sh}/lib/exec_time.sh
+source ${BASH_SOURCE%/prompt.sh}/prompt/git.sh
+source ${BASH_SOURCE%/prompt.sh}/prompt/node.sh
+source ${BASH_SOURCE%/prompt.sh}/prompt/exec_time.sh
 
 function set_prompt {
     local exit_code=$?

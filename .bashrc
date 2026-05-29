@@ -82,12 +82,6 @@ esac
 # colored GCC warnings and errors
 # export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-[ -f ~/.aliases ] && source ~/.aliases
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -99,14 +93,16 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-# Cross-shell config
-[ -f ~/.functions ] && source ~/.functions
-[ -f "$HOME/.config/shell_common/common" ] && source "$HOME/.config/shell_common/common"
-
 # Bash Completion
 eval "$(gh completion -s bash)"
 eval "$(fnm completions --shell bash)"
 
-# Custom prompt
-[ -f ~/.config/shell_common/bash_prompt/prompt.sh ] && source ~/.config/shell_common/bash_prompt/prompt.sh
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+    for rc in ~/.bashrc.d/*; do
+        if [ -f "$rc" ]; then
+            . "$rc"
+        fi
+    done
+fi
+unset rc
