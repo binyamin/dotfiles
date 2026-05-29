@@ -1,6 +1,0 @@
-set dotenv-load := false
-
-go:
-    polybar main --config=~/.config/polybar/config.ini
-run:
-    polybar main --config=~/.config/polybar/config.ini -r
