@@ -1,21 +1,15 @@
 [init]
-	; git<=2.25 doesn't support this option
 	defaultBranch = main
 [user]
 	name = Binyamin Aron Green
 	email = binyamingreen@protonmail.com
-	signingkey = 4D9E5197E6A524D9
+	# signingkey = "~/.ssh/id_ed25519.pub"
+	signingkey = C27D091C9A453A1E
 [pull]
 	ff = only
-[merge]
-	tool = "vsc"
-[mergetool "vsc"]
-	cmd = code-insiders --wait --new-window $MERGED
-[diff]
-	tool = "vsc"
-[difftool "vsc"]
-	cmd = code-insiders --wait --diff --new-window $LOCAL $REMOTE
 [commit]
 	gpgSign = true
 [tag]
 	gpgSign = true
+[gpg]
+	# format = ssh
