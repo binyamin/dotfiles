@@ -1,4 +1,6 @@
-#!/bin/sh
+###
+# Functions
+###
 
 # Play a notification sound
 mksound() {
@@ -25,18 +27,25 @@ mit() {
   fi
 }
 
-reload_gtk_theme() {
-  theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
-  gsettings set org.gnome.desktop.interface gtk-theme ''
-  sleep 1
-  gsettings set org.gnome.desktop.interface gtk-theme $theme
-}
-
-# List all manually-installed debian packages without dependencies
-# Source: https://unix.stackexchange.com/a/468369
-apt-manual() {
-	apt-mark showmanual | sort | grep -v -F -f <(apt show $(apt-mark showmanual) 2> /dev/null | grep -e ^Depends -e ^Pre-Depends | sed 's/^Depends: //; s/^Pre-Depends: //; s/(.*)//g; s/:any//g' | tr -d ',|' | tr ' ' '\n' | grep -v ^$ | sort -u)
-
-	# list=$(apt list --installed | sed 's#/.*##')
-	# echo $list
+# ex - archive extractor
+# usage: ex <file>
+ex() {
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
 }
