@@ -1,6 +1,5 @@
 # Prompting Tips
 
-
 ## Escape Sequences
 
 Basic Format: `\[\033[<a>;<?b>;<?c>;<?d>m\]`

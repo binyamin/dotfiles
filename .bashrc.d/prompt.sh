@@ -1,11 +1,6 @@
-#!/bin/sh
-
-# Custom Bash prompt "galileo"
-#
-# Version: 0.1.0
-# Author: Binyamin Aron Green, https://binyam.in
-# License: MIT
-# https://github.com/binyamin/dotfiles
+###
+# Custom Bash prompt
+###
 
 source ${BASH_SOURCE%/prompt.sh}/prompt/git.sh
 source ${BASH_SOURCE%/prompt.sh}/prompt/node.sh

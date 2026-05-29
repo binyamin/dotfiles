@@ -84,7 +84,6 @@ function f_git {
             [[ "$is_behind" == true ]] && git_status="$git_status_behind$git_status"
         fi
 
-        
         if [[ -n $git_status ]]; then
             git_status=" [$git_status]"
         fi
